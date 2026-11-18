@@ -8,7 +8,6 @@ import SpecialtiesSection from "@/components/landing/SpecialtiesSection";
 import AdvantagesSection from "@/components/landing/AdvantagesSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
-import AppDownloadSection from "@/components/landing/AppDownloadSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 import CookieConsent from "@/components/common/CookieConsent";
@@ -45,13 +44,6 @@ const IndexContent: React.FC = () => {
         <AdvantagesSection />
         <TestimonialsSection />
         <BenefitsSection />
-        
-        {/* Seção de Download do App */}
-        <section className="w-full bg-[#1A2B5C] py-16 px-6">
-          <div className="w-full max-w-[1440px] mx-auto">
-            <AppDownloadSection />
-          </div>
-        </section>
         
         <CTASection />
       </main>

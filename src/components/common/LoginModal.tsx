@@ -41,11 +41,11 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           </button>
           
           <button
-            onClick={() => handlePlatformClick("https://vip.acessorias.com/")}
+            onClick={() => handlePlatformClick("https://app.impostograma.com/")}
             className="w-full h-14 px-6 py-4 bg-transparent border-2 border-[#FFAA00] rounded-lg flex items-center justify-between transition-all duration-300 hover:bg-[#FFAA00]/10"
           >
             <span className="text-[#FFAA00] text-lg font-semibold font-inter">
-              Plataforma Acessorias
+              Plataforma Impostograma
             </span>
             <ExternalLink size={20} className="text-[#FFAA00]" />
           </button>

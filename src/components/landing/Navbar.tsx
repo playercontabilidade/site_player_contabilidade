@@ -54,12 +54,14 @@ const Navbar: React.FC = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-[12px] border-b border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
         <div className="w-full max-w-[1440px] mx-auto px-[59px] py-4 h-[80px] flex justify-between items-center max-md:px-5 max-sm:px-2.5">
-          <Link to="/">
-            <img
-              src="/img/logo/logo-principal.png"
-              className="w-48 h-16"
-              alt="Logo Player Contabilidade"
-            />
+          <Link to="/" className="header-brand" aria-label="Player Contabilidade — início">
+            <span className="header-brand__float">
+              <img
+                src="/img/logo/logo-natal.svg"
+                className="header-brand__image w-48 h-16 object-contain"
+                alt="Logo Player Contabilidade"
+              />
+            </span>
           </Link>
           
           {/* Desktop Menu */}
@@ -94,6 +96,14 @@ const Navbar: React.FC = () => {
             >
               Contato
             </div>
+            <a
+              href="https://vagas.playercontabilidade.com/vagas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-inter text-orange-200/75 text-lg font-medium leading-loose"
+            >
+              Vagas
+            </a>
             
             <button className="btn-simulador" onClick={openModal}>
               <span className="glow"></span>
@@ -171,6 +181,15 @@ const Navbar: React.FC = () => {
                     >
                       Contato
                     </div>
+                    <a
+                      href="https://vagas.playercontabilidade.com/vagas"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-3 font-inter text-lg text-orange-200/75 font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Vagas
+                    </a>
                     
                     <button 
                       className="btn-simulador w-full mt-4"

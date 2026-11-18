@@ -7,7 +7,6 @@ import Footer from "@/components/landing/Footer";
 import CTASection from "@/components/landing/CTASection";
 import ContactButton from "@/components/landing/ContactButton";
 import BenefitsSection from "@/components/landing/BenefitsSection";
-import AppDownloadSection from "@/components/landing/AppDownloadSection";
 import CookieConsent from "@/components/common/CookieConsent";
 import { TaxSimulatorProvider } from "@/hooks/useTaxSimulator";
 
@@ -159,13 +158,6 @@ const SolutionsContent: React.FC = () => {
 
         {/* Benefits Section */}
         <BenefitsSection />
-
-        {/* Seção de Download do App */}
-        <section className="w-full bg-[#1A2B5C] py-16 px-6">
-          <div className="w-full max-w-[1440px] mx-auto">
-            <AppDownloadSection />
-          </div>
-        </section>
 
         {/* CTA Section */}
         <CTASection />

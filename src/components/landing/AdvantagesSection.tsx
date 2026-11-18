@@ -8,7 +8,8 @@ const AdvantageItem: React.FC<{
   description: string;
   imageFirst?: boolean;
   delay?: number;
-}> = ({ image, title, description, imageFirst = true, delay = 0 }) => {
+  imagePosition?: string;
+}> = ({ image, title, description, imageFirst = true, delay = 0, imagePosition = "center" }) => {
   const content = (
     <>
       {imageFirst ? (
@@ -16,6 +17,7 @@ const AdvantageItem: React.FC<{
           <div className="relative" data-aos="fade-right" data-aos-delay={delay}>
             <img
               src={image}
+              style={{ objectPosition: imagePosition }}
               className="w-[585px] h-96 rounded-[32px] border-[0.75px] border-white backdrop-blur-xl max-md:w-full max-md:h-64 object-cover"
               alt={title}
             />
@@ -42,6 +44,7 @@ const AdvantageItem: React.FC<{
           <div className="relative" data-aos="fade-left" data-aos-delay={delay + 200}>
             <img
               src={image}
+              style={{ objectPosition: imagePosition }}
               className="w-[585px] h-96 rounded-[32px] border-[0.75px] border-white backdrop-blur-xl max-md:w-full max-md:h-64 object-cover"
               alt={title}
             />
@@ -69,7 +72,7 @@ const AdvantagesSection: React.FC = () => {
           
           <div className="flex flex-col items-center">
             <AdvantageItem 
-              image="/img/vantagens/vantagem-1.png"
+              image="/img/sobre-nos/equipe-0999.jpg"
               title="Preços Customizados"
               description="Nossos contadores especialistas são focados em manter sua empresa sempre regular e pagando apenas os impostos estritamente necessários."
               imageFirst={true}
@@ -77,7 +80,8 @@ const AdvantagesSection: React.FC = () => {
             />
             
             <AdvantageItem 
-              image="/img/vantagens/vantagem-2.png"
+              image="/img/sobre-nos/equipe-reuniao.jpg"
+              imagePosition="50% 75%"
               title="Suporte Especializado"
               description="Estamos desde 2022 no mercado, +1.000 clientes e um time de contadores especialistas. Você pode confiar em uma empresa que economiza mais de R$ 7 milhões para seus clientes."
               imageFirst={false}

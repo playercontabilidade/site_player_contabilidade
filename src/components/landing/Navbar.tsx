@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { User, Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
@@ -15,7 +15,15 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const { openModal } = useTaxSimulator();
+
+  useEffect(() => {
+    const updateScrollState = () => setHasScrolled(window.scrollY > 24);
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
   
   const getActiveItem = () => {
     switch (location.pathname) {
@@ -52,48 +60,58 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-[12px] border-b border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
-        <div className="w-full max-w-[1440px] mx-auto px-[59px] py-4 h-[80px] flex justify-between items-center max-md:px-5 max-sm:px-2.5">
-          <Link to="/">
-            <img
-              src="/img/logo/logo-principal.png"
-              className="w-48 h-16"
-              alt="Logo Player Contabilidade"
-            />
+      <nav className={`site-navbar fixed top-0 left-0 right-0 z-50 border-b border-white/15 ${hasScrolled ? "site-navbar--scrolled" : ""}`}>
+        <div className="header-layout w-full max-w-[1440px] mx-auto px-5 py-4 h-[80px] flex gap-2 lg:gap-4 justify-between items-center max-sm:px-2.5">
+          <Link to="/" className="header-brand" aria-label="Player Contabilidade — início">
+            <span className="header-brand__float">
+              <img
+                src="/img/logo/logo-natal.svg"
+                className="header-brand__image w-40 sm:w-48 h-16 object-contain"
+                alt="Logo Player Contabilidade"
+              />
+            </span>
           </Link>
           
           {/* Desktop Menu */}
-          <div className="flex items-center gap-[36px] max-md:hidden">
+          <div className="header-desktop hidden md:flex items-center whitespace-nowrap">
             <Link
               to="/"
-              className={`cursor-pointer font-inter ${activeItem === "Início" ? "text-amber-500 text-lg font-bold" : "text-orange-200/75 text-lg font-medium"} leading-loose`}
+              className={`cursor-pointer font-inter ${activeItem === "Início" ? "text-amber-500 text-lg font-bold" : "text-slate-100 text-lg font-medium"} leading-loose`}
             >
               Início
             </Link>
             <Link
               to="/sobre-nos"
-              className={`cursor-pointer font-inter ${activeItem === "Sobre Nós" ? "text-amber-500 text-lg font-bold" : "text-orange-200/75 text-lg font-medium"} leading-loose`}
+              className={`cursor-pointer font-inter ${activeItem === "Sobre Nós" ? "text-amber-500 text-lg font-bold" : "text-slate-100 text-lg font-medium"} leading-loose`}
             >
               Sobre Nós
             </Link>
             <Link
               to="/solucoes"
-              className={`cursor-pointer font-inter ${activeItem === "Soluções" ? "text-amber-500 text-lg font-bold" : "text-orange-200/75 text-lg font-medium"} leading-loose`}
+              className={`cursor-pointer font-inter ${activeItem === "Soluções" ? "text-amber-500 text-lg font-bold" : "text-slate-100 text-lg font-medium"} leading-loose`}
             >
               Soluções
             </Link>
             <div 
-              className="cursor-pointer font-inter text-orange-200/75 text-lg font-medium leading-loose"
+              className="cursor-pointer font-inter text-slate-100 text-lg font-medium leading-loose"
               onClick={() => scrollToSection("especialidades")}
             >
               Especialidades
             </div>
             <div 
-              className="cursor-pointer font-inter text-orange-200/75 text-lg font-medium leading-loose"
+              className="cursor-pointer font-inter text-slate-100 text-lg font-medium leading-loose"
               onClick={() => scrollToSection("contato")}
             >
               Contato
             </div>
+            <a
+              href="https://vagas.playercontabilidade.com/vagas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-inter text-slate-100 text-lg font-medium leading-loose"
+            >
+              Vagas
+            </a>
             
             <button className="btn-simulador" onClick={openModal}>
               <span className="glow"></span>
@@ -105,7 +123,8 @@ const Navbar: React.FC = () => {
             
             <button 
               onClick={() => setIsLoginModalOpen(true)}
-              className="w-12 h-12 bg-gradient-to-br from-[#FFAA00] to-[#F88805] rounded-full relative flex items-center justify-center outline outline-[1.54px] outline-offset-[-1.54px] outline-[#F0C777] transition-transform duration-300 ease-in-out hover:scale-105"
+              aria-label="Acessar plataformas"
+              className="header-account w-12 h-12 bg-gradient-to-br from-[#FFAA00] to-[#F88805] rounded-full relative flex items-center justify-center outline outline-[1.54px] outline-offset-[-1.54px] outline-[#F0C777] transition-transform duration-300 ease-in-out hover:scale-105"
             >
               <User size={24} className="text-black" />
             </button>
@@ -126,7 +145,7 @@ const Navbar: React.FC = () => {
                   <Menu size={24} />
                 </button>
               </DrawerTrigger>
-              <DrawerContent className="bg-black/90 backdrop-blur-[12px] border-white/20">
+              <DrawerContent className="bg-[#0e1c2c] backdrop-blur-[12px] border-white/20">
                 <div className="p-6 space-y-6">
                   <div className="flex justify-between items-center">
                     <h2 className="text-xl font-bold text-white">Menu</h2>
@@ -140,37 +159,46 @@ const Navbar: React.FC = () => {
                   <div className="space-y-4">
                     <Link
                       to="/"
-                      className={`block py-3 font-inter text-lg ${activeItem === "Início" ? "text-amber-500 font-bold" : "text-orange-200/75 font-medium"}`}
+                      className={`block py-3 font-inter text-lg ${activeItem === "Início" ? "text-amber-500 font-bold" : "text-slate-100 font-medium"}`}
                       onClick={() => setIsOpen(false)}
                     >
                       Início
                     </Link>
                     <Link
                       to="/sobre-nos"
-                      className={`block py-3 font-inter text-lg ${activeItem === "Sobre Nós" ? "text-amber-500 font-bold" : "text-orange-200/75 font-medium"}`}
+                      className={`block py-3 font-inter text-lg ${activeItem === "Sobre Nós" ? "text-amber-500 font-bold" : "text-slate-100 font-medium"}`}
                       onClick={() => setIsOpen(false)}
                     >
                       Sobre Nós
                     </Link>
                     <Link
                       to="/solucoes"
-                      className={`block py-3 font-inter text-lg ${activeItem === "Soluções" ? "text-amber-500 font-bold" : "text-orange-200/75 font-medium"}`}
+                      className={`block py-3 font-inter text-lg ${activeItem === "Soluções" ? "text-amber-500 font-bold" : "text-slate-100 font-medium"}`}
                       onClick={() => setIsOpen(false)}
                     >
                       Soluções
                     </Link>
                     <div 
-                      className="block py-3 font-inter text-lg text-orange-200/75 font-medium cursor-pointer"
+                      className="block py-3 font-inter text-lg text-slate-100 font-medium cursor-pointer"
                       onClick={() => scrollToSection("especialidades")}
                     >
                       Especialidades
                     </div>
                     <div 
-                      className="block py-3 font-inter text-lg text-orange-200/75 font-medium cursor-pointer"
+                      className="block py-3 font-inter text-lg text-slate-100 font-medium cursor-pointer"
                       onClick={() => scrollToSection("contato")}
                     >
                       Contato
                     </div>
+                    <a
+                      href="https://vagas.playercontabilidade.com/vagas"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-3 font-inter text-lg text-slate-100 font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Vagas
+                    </a>
                     
                     <button 
                       className="btn-simulador w-full mt-4"

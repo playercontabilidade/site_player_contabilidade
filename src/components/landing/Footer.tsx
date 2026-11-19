@@ -1,20 +1,28 @@
 
 import React from "react";
-import { Phone, Mail, Instagram, Facebook, MapPin, Headphones, AlertTriangle } from "lucide-react";
+import { Phone, Mail, Instagram, Facebook, Youtube, Linkedin, MapPin, Headphones, AlertTriangle } from "lucide-react";
 
-const Footer: React.FC = () => {
+const Footer: React.FC<{ tone?: "light" | "navy" }> = ({ tone = "light" }) => {
   return (
-    <footer id="contato" className="w-full bg-slate-800">
+    <footer id="contato" className={`w-full site-${tone}`}>
       <div className="w-full max-w-[1440px] mx-auto pt-[77px] pb-0 px-[53px] max-sm:pt-10 max-sm:px-5">
         <div className="flex justify-between mb-[50px] max-md:flex-col max-md:items-center max-md:gap-10">
           {/* Primeira coluna - Logo e certificações */}
           <div className="w-72 max-md:w-full" data-aos="fade-up">
-            <img
-              src="/img/logo/logo-rodape.png"
-              className="w-[276px] h-[90px] mb-[13px]"
-              alt="Logo Footer"
-            />
-            <div className="text-orange-200/75 text-base font-normal font-inter leading-[22.72px] mb-[13px] max-md:text-sm max-sm:text-xs">
+            <a
+              href="https://www.instagram.com/playercontabilidade/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-brand block w-fit rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-500 focus-visible:outline-offset-4"
+              aria-label="Instagram da Player Contabilidade (abre em nova aba)"
+            >
+              <img
+                src={tone === "light" ? "/img/logo/logo-rodape-escura.svg" : "/img/logo/logo-rodape.png"}
+                className="w-[276px] h-[90px] object-contain object-left mb-[13px]"
+                alt="Player Contabilidade"
+              />
+            </a>
+            <div className="site-copy text-base font-normal font-inter leading-[22.72px] mb-[13px] max-md:text-sm max-sm:text-xs">
               <span>
                 "Sem dados você é apenas uma pessoa qualquer com uma
                 opinião."
@@ -37,38 +45,76 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Segunda coluna - Informações de contato */}
-          <div className="w-80 h-52 max-md:w-full" data-aos="fade-up" data-aos-delay="200">
+          <div className="w-80 max-md:w-full" data-aos="fade-up" data-aos-delay="200">
             <div className="flex items-center gap-2 mb-6">
-              <Phone size={20} className="text-amber-500 flex-shrink-0" />
-              <div className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+              <Phone size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
                 0800 800 1385
               </div>
             </div>
             <div className="flex items-center gap-2 mb-6">
-              <Phone size={20} className="text-amber-500 flex-shrink-0" />
-              <div className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+              <Phone size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
                 (61) 3995-0174
               </div>
             </div>
             <div className="flex items-center gap-2 mb-6">
-              <Mail size={20} className="text-amber-500 flex-shrink-0" />
-              <div className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+              <Mail size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
                 bemvindo@playercontabilidade.com
               </div>
             </div>
-            <div className="flex items-center gap-2 mb-6">
-              <Instagram size={20} className="text-amber-500 flex-shrink-0" />
-              <div className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+            <a
+              href="https://www.instagram.com/playercontabilidade/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 mb-6"
+              aria-label="Instagram da Player Contabilidade (abre em nova aba)"
+            >
+              <Instagram size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
                 @PlayerContabilidade
               </div>
-            </div>
-            <div className="flex items-center gap-2 mb-6">
-              <Facebook size={20} className="text-amber-500 flex-shrink-0" />
-              <div className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+            </a>
+            <a
+              href="https://pt-br.facebook.com/playercontabilidade/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 mb-6"
+              aria-label="Facebook da Player Contabilidade (abre em nova aba)"
+            >
+              <Facebook size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
                 /PlayerContabilidade
               </div>
-            </div>
+            </a>
             
+            <a
+              href="https://www.youtube.com/@playercontabilidade"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 mb-6"
+              aria-label="YouTube da Player Contabilidade (abre em nova aba)"
+            >
+              <Youtube size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+                @playercontabilidade
+              </div>
+            </a>
+
+            <a
+              href="https://br.linkedin.com/company/player-contabilidade"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 mb-6"
+              aria-label="LinkedIn da Player Contabilidade (abre em nova aba)"
+            >
+              <Linkedin size={20} className="site-accent flex-shrink-0" />
+              <div className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+                Player Contabilidade
+              </div>
+            </a>
+
             {/* Botões SAC e Denuncie */}
             <div className="flex gap-3 mt-4">
               <a 
@@ -77,8 +123,8 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 rounded-lg px-3 py-2 transition-all duration-300 hover:bg-amber-500/30"
               >
-                <Headphones size={16} className="text-amber-500" />
-                <span className="text-amber-500 text-sm font-medium">SAC</span>
+                <Headphones size={16} className="site-accent" />
+                <span className="site-accent text-sm font-medium">SAC</span>
               </a>
               
               <a 
@@ -87,49 +133,23 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-red-500/20 border border-red-500/30 rounded-lg px-3 py-2 transition-all duration-300 hover:bg-red-500/30"
               >
-                <AlertTriangle size={16} className="text-red-400" />
-                <span className="text-red-400 text-sm font-medium">Denuncie</span>
+                <AlertTriangle size={16} className="site-danger" />
+                <span className="site-danger text-sm font-medium">Denuncie</span>
               </a>
             </div>
           </div>
           
-          {/* Terceira coluna - Endereços */}
-          <div className="w-80 h-60 max-md:w-full" data-aos="fade-up" data-aos-delay="400">
+          {/* Terceira coluna - Sede */}
+          <div className="w-80 max-md:w-full" data-aos="fade-up" data-aos-delay="400">
             <div className="flex gap-4 mb-[19px]">
-              <MapPin size={20} className="text-amber-500 flex-shrink-0 mt-1" />
+              <MapPin size={20} className="site-accent flex-shrink-0 mt-1" />
               <div className="w-72">
-                <span className="text-orange-200/75 text-base font-bold font-inter max-md:text-sm max-sm:text-xs">
-                  Centro de Processos:
-                </span>
-                <br />
-                <span className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
-                  Unidade Farma: Q. 103 Sul Av JK Nº 140 Edifício JK Bussines
-                  Center, Sala 901
-                </span>
-              </div>
-            </div>
-            <div className="flex gap-4 mb-[19px]">
-              <MapPin size={20} className="text-amber-500 flex-shrink-0 mt-1" />
-              <div className="w-72">
-                <span className="text-orange-200/75 text-base font-bold font-inter max-md:text-sm max-sm:text-xs">
-                  Unidade Varejo:
-                </span>
-                <br />
-                <span className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
-                  Unidade Farma: Q. 103 Sul Av JK Nº 140 Edifício JK Bussines
-                  Center, Sala 701
-                </span>
-              </div>
-            </div>
-            <div className="flex gap-4 mb-[19px]">
-              <MapPin size={20} className="text-amber-500 flex-shrink-0 mt-1" />
-              <div className="w-72">
-                <span className="text-orange-200/75 text-base font-bold font-inter max-md:text-sm max-sm:text-xs">
+                <span className="site-copy text-base font-bold font-inter max-md:text-sm max-sm:text-xs">
                   Sede:
                 </span>
                 <br />
-                <span className="text-orange-200/75 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
-                  Arso 171 Lote 04 Av. Joaquim Teotônio Segurado
+                <span className="site-copy text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+                  Avenida Siqueira Campos, 5391, Palmas, Tocantins
                 </span>
               </div>
             </div>
@@ -137,8 +157,8 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Copyright section */}
-        <div className="w-full h-16 bg-slate-800">
-          <div className="w-full max-w-[503px] mx-auto py-[15px] text-center text-orange-200/50 text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
+        <div className="w-full h-16 bg-transparent">
+          <div className="w-full max-w-[503px] mx-auto py-[15px] text-center site-muted text-base font-normal font-inter max-md:text-sm max-sm:text-xs">
             <span>
               Copyright © 2025 - Player Contabilidade | CNPJ 47.799.371/0001-49
             </span>

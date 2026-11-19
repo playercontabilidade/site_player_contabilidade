@@ -51,16 +51,16 @@ const CertificationsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#0A1F44] to-[#0B2737] py-16 relative">
+    <section className="w-full site-light py-16 relative">
       {/* Yellow line at top */}
       <div className="w-full h-[2px] bg-gradient-to-r from-[#FFAA00] to-[#F88805] absolute top-0 left-0"></div>
       
       <div className="w-full max-w-[1440px] mx-auto px-6">
         <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#F88805] bg-clip-text text-transparent mb-6 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]">
+          <h2 className="site-heading text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#F88805] bg-clip-text text-transparent mb-6 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]">
             Somos uma<br/>Contabilidade Certificada
           </h2>
-          <p className="text-white text-xl font-normal font-inter leading-8 max-w-[800px] mx-auto max-md:text-lg max-sm:text-base">
+          <p className="site-copy text-xl font-normal font-inter leading-8 max-w-[800px] mx-auto max-md:text-lg max-sm:text-base">
             Na nossa contabilidade, excelência não é só um objetivo – é um compromisso. Todas essas certificações que você vê aqui representam muito mais do que selos: elas são a prova de que seguimos os mais altos padrões de ética, segurança, inclusão e responsabilidade.
           </p>
         </div>
@@ -69,7 +69,7 @@ const CertificationsSection: React.FC = () => {
           {certifications.map((cert, index) => (
             <div 
               key={index}
-              className="bg-white/5 backdrop-blur-[12px] border border-white/20 rounded-[20px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:bg-white/10 transition-all duration-300"
+              className="site-card backdrop-blur-[12px] border border-slate-200 rounded-[20px] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:bg-slate-50 transition-all duration-300"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -80,10 +80,10 @@ const CertificationsSection: React.FC = () => {
                   className="w-16 h-16 object-contain flex-shrink-0"
                 />
                 <div>
-                  <h3 className="text-[#FFAA00] text-lg font-bold font-inter mb-3">
+                  <h3 className="site-heading site-accent text-lg font-bold font-inter mb-3">
                     {cert.title}
                   </h3>
-                  <p className="text-white text-sm font-normal font-inter leading-6">
+                  <p className="site-copy text-sm font-normal font-inter leading-6">
                     {cert.description}
                   </p>
                 </div>

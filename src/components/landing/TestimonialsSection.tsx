@@ -8,9 +8,9 @@ const TestimonialsSection: React.FC = () => {
   const handleNext = () => {
     setActiveSlide(prev => prev < 1 ? prev + 1 : 1);
   };
-  return <section className="w-full bg-black py-[21px] pb-[49px]">
+  return <section className="w-full site-navy py-[21px] pb-[49px]">
       <div className="w-full max-w-[1440px] mx-auto px-[53px] max-md:px-5">
-        <h2 className="bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-[54px] font-bold font-inter leading-[62px] tracking-[-1.2px] text-center mb-[78px] max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]">
+        <h2 className="site-heading bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-[54px] font-bold font-inter leading-[62px] tracking-[-1.2px] text-center mb-[78px] max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]">
           O que nossos clientes dizem:
         </h2>
         

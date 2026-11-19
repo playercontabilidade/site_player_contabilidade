@@ -1,18 +1,11 @@
 
 import React, { useState, useEffect } from "react";
-import { MessageCircleMore } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 
 const WhatsAppFloatingButton: React.FC = () => {
-  const [showMessage, setShowMessage] = useState(false);
   const [pingNotification, setPingNotification] = useState(false);
 
   useEffect(() => {
-    // Show message after 10 seconds
-    const messageTimer = setTimeout(() => {
-      setShowMessage(true);
-    }, 10000);
-
     // Ping notification every 5 seconds
     const pingInterval = setInterval(() => {
       setPingNotification(true);
@@ -20,7 +13,6 @@ const WhatsAppFloatingButton: React.FC = () => {
     }, 5000);
 
     return () => {
-      clearTimeout(messageTimer);
       clearInterval(pingInterval);
     };
   }, []);
@@ -35,19 +27,6 @@ const WhatsAppFloatingButton: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      {/* Message Balloon */}
-      {showMessage && (
-        <div className="absolute bottom-16 right-0 mb-2 animate-fade-in">
-          <div className="bg-white rounded-xl shadow-md px-6 py-3 flex items-center justify-center min-w-[200px]">
-            <span className="text-black text-sm font-medium">
-              Oi, posso te ajudar?
-            </span>
-          </div>
-          {/* Arrow pointing to button */}
-          <div className="absolute bottom-[-6px] right-6 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-white"></div>
-        </div>
-      )}
-
       {/* WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}

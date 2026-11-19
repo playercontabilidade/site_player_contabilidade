@@ -37,7 +37,7 @@ const BenefitItem: React.FC<BenefitItemProps> = ({
   const screenId = useId().replace(/:/g, "");
 
   return (
-    <div className="w-full max-w-[1027px] px-8 py-8 bg-white rounded-md border border-slate-200 flex gap-[37px] mb-16 max-md:flex-col max-md:items-center" data-aos="fade-up" data-aos-delay={delay}>
+    <div className="w-full max-w-[1027px] px-8 py-8 site-card rounded-md border border-slate-200 flex gap-[37px] mb-16 max-md:flex-col max-md:items-center" data-aos="fade-up" data-aos-delay={delay}>
       <div className="w-72 max-w-full h-72 flex items-center flex-shrink-0">
         <svg viewBox="0 0 375 375" width="375" height="375" className="w-full h-auto" role="img" aria-label={`Tela do Impostograma: ${title}`}>
           <defs>
@@ -69,7 +69,7 @@ const BenefitItem: React.FC<BenefitItemProps> = ({
         </svg>
       </div>
       <div className="flex-1 max-md:w-full">
-        <h3 className="bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-[42px] font-bold font-inter leading-[50px] mb-[18px] max-md:text-[36px] max-md:leading-[42px] max-sm:text-[28px] max-sm:leading-[34px]">
+        <h3 className="site-heading bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-[42px] font-bold font-inter leading-[50px] mb-[18px] max-md:text-[36px] max-md:leading-[42px] max-sm:text-[28px] max-sm:leading-[34px]">
           {title}
         </h3>
         <p className="text-neutral-900 text-xl font-normal font-inter leading-8 text-justify max-md:text-lg max-sm:text-base">
@@ -82,13 +82,13 @@ const BenefitItem: React.FC<BenefitItemProps> = ({
 
 const BenefitsSection: React.FC = () => {
   return (
-    <section className="w-full bg-zinc-100 py-24 relative">
+    <section className="w-full site-light py-24 relative">
       {/* Linha divisória amarela no topo */}
       <div className="w-full h-4 absolute top-0 left-0 bg-gradient-to-b from-orange-400 via-amber-500 to-orange-300" />
       
       <div className="w-full max-w-[1440px] mx-auto px-6 pt-16">
         <div className="max-w-[1090px] mx-auto">
-          <h2 className="bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-[54px] font-bold font-inter text-center mb-16 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
+          <h2 className="site-heading bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-[54px] font-bold font-inter text-center mb-16 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
             Ainda mais benefícios:
           </h2>
           

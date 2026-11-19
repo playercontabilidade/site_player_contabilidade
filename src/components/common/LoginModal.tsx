@@ -14,6 +14,7 @@ interface LoginModalProps {
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
+  const logoFilterId = React.useId();
   const handlePlatformClick = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
     onClose();
@@ -22,6 +23,17 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-white max-w-md">
+        <svg width="0" height="0" className="absolute pointer-events-none" aria-hidden="true">
+          <defs>
+            <filter id={logoFilterId} colorInterpolationFilters="sRGB">
+              {/* Neutral gray becomes transparent while the purple mark stays visible. */}
+              <feColorMatrix
+                type="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 -2 2 0 0"
+              />
+            </filter>
+          </defs>
+        </svg>
         <DialogHeader>
           <DialogTitle className="text-center text-xl font-bold text-black flex items-center justify-center gap-2">
             <User size={24} className="text-amber-500" />
@@ -42,12 +54,17 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           
           <button
             onClick={() => handlePlatformClick("https://app.impostograma.com/")}
-            className="w-full h-14 px-6 py-4 bg-transparent border-2 border-[#FFAA00] rounded-lg flex items-center justify-between transition-all duration-300 hover:bg-[#FFAA00]/10"
+            className="platform-impostograma w-full h-14 px-6 py-4 border-2 border-transparent rounded-lg flex items-center justify-between transition-all duration-300"
           >
-            <span className="text-[#FFAA00] text-lg font-semibold font-inter">
+            <span className="platform-impostograma__label text-lg font-semibold font-inter">
               Plataforma Impostograma
             </span>
-            <ExternalLink size={20} className="text-[#FFAA00]" />
+            <img
+              src="/img/logo/impostograma-icone.png"
+              alt="Logo Impostograma"
+              className="h-9 w-5 shrink-0 object-contain"
+              style={{ filter: `url(#${logoFilterId})` }}
+            />
           </button>
         </div>
       </DialogContent>

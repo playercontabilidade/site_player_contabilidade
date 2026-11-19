@@ -27,19 +27,19 @@ const AboutUsContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black">
-      <header className="relative min-h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/sobre-nos/sobre-nos-bg.png')" }}>
+    <div className="w-full bg-[#0e1c2c]">
+      <header className="site-navy relative min-h-screen bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "linear-gradient(rgba(14, 28, 44, 0.9), rgba(14, 28, 44, 0.9)), url('/img/sobre-nos/sobre-nos-bg.png')" }}>
         <Navbar />
         
         {/* Quem somos section */}
         <div className="w-full max-w-[1440px] mx-auto px-6 pt-32 pb-20">
           <div className="max-w-[900px] mx-auto">
-            <h1 className="text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent mb-8 text-center max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
+            <h1 className="site-heading text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent mb-8 text-center max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
               Quem somos?
             </h1>
-            <p className="text-orange-200/90 text-xl font-normal font-inter leading-8 mb-16 max-md:text-lg max-sm:text-base" data-aos="fade-up" data-aos-delay="200">
-              Somos uma contabilidade especializada no varejo FARMA! Atualmente, atendemos +1.000 empresários entre os segmentos de farmácias, drogarias, farmácias de manipulação, distribuidoras e industrias farmacêuticas. Contamos com estrutura em Palmas (TO) e uma unidade de apoio em São Paulo, totalmente voltadas ao atendimento e processamento do mundo contábil FARMA! Dispomos de um time de 100 especialistas, completamente aptos para atender os setores mais complexos do seu segmento com o melhor da Elisão fiscal, planejamento societário, departamento pessoal e planejamento contábil. Estamos presentes em 24 estados brasileiros.
+            <p className="site-copy text-xl font-normal font-inter leading-8 mb-16 max-md:text-lg max-sm:text-base" data-aos="fade-up" data-aos-delay="200">
+              Somos uma contabilidade especializada no varejo FARMA! Atualmente, atendemos +1.600 empresários entre os segmentos de farmácias, drogarias, farmácias de manipulação, distribuidoras e industrias farmacêuticas. Contamos com estrutura em Palmas (TO) e uma unidade de apoio em São Paulo, totalmente voltadas ao atendimento e processamento do mundo contábil FARMA! Dispomos de um time de 100 especialistas, completamente aptos para atender os setores mais complexos do seu segmento com o melhor da Elisão fiscal, planejamento societário, departamento pessoal e planejamento contábil. Estamos presentes em 24 estados brasileiros.
             </p>
 
             {/* Missão, Visão, Valores */}
@@ -48,9 +48,9 @@ const AboutUsContent: React.FC = () => {
               <div className="bg-white/5 backdrop-blur-[12px] border border-white/20 rounded-[20px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]" data-aos="fade-up" data-aos-delay="300">
                 <div className="flex items-center mb-4">
                   <Trophy size={32} className="text-amber-500 mr-3" />
-                  <h3 className="text-amber-500 text-xl font-bold font-inter">MISSÃO</h3>
+                  <h3 className="site-heading text-amber-500 text-xl font-bold font-inter">MISSÃO</h3>
                 </div>
-                <p className="text-white text-base font-normal font-inter leading-6">
+                <p className="site-copy text-base font-normal font-inter leading-6">
                   Potencializar resultados empresariais com excelência contábil e consultoria estratégica.
                 </p>
               </div>
@@ -59,9 +59,9 @@ const AboutUsContent: React.FC = () => {
               <div className="bg-white/5 backdrop-blur-[12px] border border-white/20 rounded-[20px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]" data-aos="fade-up" data-aos-delay="400">
                 <div className="flex items-center mb-4">
                   <Eye size={32} className="text-amber-500 mr-3" />
-                  <h3 className="text-amber-500 text-xl font-bold font-inter">VISÃO</h3>
+                  <h3 className="site-heading text-amber-500 text-xl font-bold font-inter">VISÃO</h3>
                 </div>
-                <p className="text-white text-base font-normal font-inter leading-6">
+                <p className="site-copy text-base font-normal font-inter leading-6">
                   Ser o maior hub de negócios contábeis no estado do Tocantins até 2027.
                 </p>
               </div>
@@ -70,9 +70,9 @@ const AboutUsContent: React.FC = () => {
               <div className="bg-white/5 backdrop-blur-[12px] border border-white/20 rounded-[20px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]" data-aos="fade-up" data-aos-delay="500">
                 <div className="flex items-center mb-4">
                   <Gem size={32} className="text-amber-500 mr-3" />
-                  <h3 className="text-amber-500 text-xl font-bold font-inter">VALORES</h3>
+                  <h3 className="site-heading text-amber-500 text-xl font-bold font-inter">VALORES</h3>
                 </div>
-                <ul className="text-white text-base font-normal font-inter leading-6 space-y-2">
+                <ul className="site-copy text-base font-normal font-inter leading-6 space-y-2">
                   <li>• Foco no cliente</li>
                   <li>• Excelência</li>
                   <li>• Comprometimento</li>
@@ -107,9 +107,9 @@ const AboutUsContent: React.FC = () => {
       <TestimonialsSection />
       
       {/* CTA Section */}
-      <CTASection />
+      <CTASection tone="light" />
       
-      <Footer />
+      <Footer tone="navy" />
       <WhatsAppFloatingButton />
       <TaxSimulatorModal isOpen={isModalOpen} onClose={closeModal} />
     </div>

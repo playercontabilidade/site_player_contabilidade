@@ -22,9 +22,9 @@ const StructureSection: React.FC = () => {
   const prevSlide = () => {
     setCurrentSlide((activeSlide - 1 + slideCount) % slideCount);
   };
-  return <section className="w-full bg-black py-16">
+  return <section className="w-full site-navy py-16">
       <div className="w-full max-w-[1440px] mx-auto px-6">
-        <h2 className="text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-center mb-12 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
+        <h2 className="site-heading text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-center mb-12 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
           Conheça nossa estrutura:
         </h2>
         

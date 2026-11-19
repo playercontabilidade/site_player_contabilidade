@@ -31,7 +31,7 @@ const StatsSection: React.FC = () => {
     };
 
     // Start counting animations
-    setTimeout(() => startCount(1000, 'entrepreneurs'), 200);
+    setTimeout(() => startCount(1600, 'entrepreneurs'), 200);
     setTimeout(() => startCount(24, 'states'), 400);
     setTimeout(() => startCount(100, 'satisfaction'), 600);
 
@@ -43,32 +43,32 @@ const StatsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-r from-[#FFAA00] to-[#F88805] py-8">
+    <section className="w-full site-light py-8">
       <div className="w-full max-w-[1440px] mx-auto px-6">
         <div className="flex justify-around items-center max-md:flex-col max-md:gap-6">
           <div className="text-center">
-            <div className="text-black text-[48px] font-bold font-inter leading-[56px] max-md:text-[36px] max-md:leading-[42px]">
+            <div className="site-copy text-[48px] font-bold font-inter leading-[56px] max-md:text-[36px] max-md:leading-[42px]">
               +{stats.entrepreneurs}
             </div>
-            <div className="text-black text-lg font-medium font-inter max-md:text-base">
+            <div className="site-copy text-lg font-medium font-inter max-md:text-base">
               Empresários Satisfeitos
             </div>
           </div>
           
           <div className="text-center">
-            <div className="text-black text-[48px] font-bold font-inter leading-[56px] max-md:text-[36px] max-md:leading-[42px]">
+            <div className="site-copy text-[48px] font-bold font-inter leading-[56px] max-md:text-[36px] max-md:leading-[42px]">
               +{stats.states}
             </div>
-            <div className="text-black text-lg font-medium font-inter max-md:text-base">
+            <div className="site-copy text-lg font-medium font-inter max-md:text-base">
               Estados Brasileiros
             </div>
           </div>
           
           <div className="text-center">
-            <div className="text-black text-[48px] font-bold font-inter leading-[56px] max-md:text-[36px] max-md:leading-[42px]">
+            <div className="site-copy text-[48px] font-bold font-inter leading-[56px] max-md:text-[36px] max-md:leading-[42px]">
               {stats.satisfaction}%
             </div>
-            <div className="text-black text-lg font-medium font-inter max-md:text-base">
+            <div className="site-copy text-lg font-medium font-inter max-md:text-base">
               Clientes satisfeitos
             </div>
           </div>

@@ -3,7 +3,7 @@ import React from "react";
 
 const SpecialtiesSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#1A2B5C] py-20 px-6">
+    <section className="w-full site-navy py-20 px-6">
       <div className="w-full max-w-[1440px] mx-auto">
         <div className="text-center space-y-8" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-center mb-4">
@@ -11,8 +11,8 @@ const SpecialtiesSection: React.FC = () => {
             <span className="text-[#FFAA00]">Contabilidade Especializada</span>
           </h2>
           
-          <p className="text-white text-lg max-w-4xl mx-auto mb-12">
-            Mais de 1.000 empresas atendidas nos setores que mais exigem precisão e responsabilidade fiscal. Conheça nossas áreas de especialidade:
+          <p className="site-copy text-lg max-w-4xl mx-auto mb-12">
+            Mais de 1.600 empresas atendidas nos setores que mais exigem precisão e responsabilidade fiscal. Conheça nossas áreas de especialidade:
           </p>
           
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center max-w-4xl mx-auto">

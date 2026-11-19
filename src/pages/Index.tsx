@@ -30,10 +30,10 @@ const IndexContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black">
+    <div className="w-full bg-white">
       <header 
-        className="relative min-h-[100vh] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/hero/hero-bg.png')" }}
+        className="site-light relative min-h-[100vh] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/img/hero/hero-bg-ouro.png')" }}
       >
         <Navbar />
         <HeroSection />

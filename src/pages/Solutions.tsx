@@ -75,23 +75,23 @@ const SolutionsContent: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-black">
-      <header className="relative bg-black">
+    <div className="w-full bg-[#0e1c2c]">
+      <header className="relative bg-[#0e1c2c]">
         <Navbar />
       </header>
       
       <main>
         {/* Hero Section with Background */}
-        <section className="relative w-full min-h-screen bg-black">
+        <section className="site-navy relative w-full min-h-screen bg-[#0e1c2c]">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
             style={{ backgroundImage: "url('/img/solucoes/solucoes-bg.jpg')" }}
           />
           
           {/* Content */}
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 py-20">
-            <h1 className="text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-center mb-16 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
+            <h1 className="site-heading text-[54px] font-bold font-inter leading-[62px] tracking-[-1px] bg-gradient-to-r from-[#FFAA00] to-[#925003] bg-clip-text text-transparent text-center mb-16 max-md:text-[42px] max-md:leading-[48px] max-sm:text-[36px] max-sm:leading-[42px]" data-aos="fade-up">
               Soluções para suas demandas
             </h1>
 
@@ -99,13 +99,13 @@ const SolutionsContent: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
               {solutions.slice(0, 4).map((solution, index) => (
                 <div key={index} className="bg-white/5 backdrop-blur-[12px] rounded-[20px] border border-white/20 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)]" data-aos="fade-up" data-aos-delay={100 * (index + 1)}>
-                  <h3 className="text-amber-500 text-2xl font-bold font-inter mb-4">{solution.title}</h3>
-                  <p className="text-white text-base font-normal font-inter mb-6">
+                  <h3 className="site-heading text-amber-500 text-2xl font-bold font-inter mb-4">{solution.title}</h3>
+                  <p className="site-copy text-base font-normal font-inter mb-6">
                     {solution.subtitle}
                   </p>
                   <ul className="space-y-3 mb-8">
                     {solution.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-white text-sm font-normal font-inter flex items-start">
+                      <li key={featureIndex} className="site-copy text-sm font-normal font-inter flex items-start">
                         <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
                         {feature}
                       </li>
@@ -126,13 +126,13 @@ const SolutionsContent: React.FC = () => {
             {/* Planejamento Tributário - Center Card */}
             <div className="flex justify-center mt-8">
               <div className="bg-white/5 backdrop-blur-[12px] rounded-[20px] border border-white/20 p-8 shadow-[0_8px_32px_rgba(0,0,0,0.2)] max-w-[480px]" data-aos="fade-up" data-aos-delay="500">
-                <h3 className="text-amber-500 text-2xl font-bold font-inter mb-4">{solutions[4].title}</h3>
-                <p className="text-white text-base font-normal font-inter mb-6">
+                <h3 className="site-heading text-amber-500 text-2xl font-bold font-inter mb-4">{solutions[4].title}</h3>
+                <p className="site-copy text-base font-normal font-inter mb-6">
                   {solutions[4].subtitle}
                 </p>
                 <ul className="space-y-3 mb-8">
                   {solutions[4].features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="text-white text-sm font-normal font-inter flex items-start">
+                    <li key={featureIndex} className="site-copy text-sm font-normal font-inter flex items-start">
                       <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
                       {feature}
                     </li>
